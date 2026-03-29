@@ -14,7 +14,7 @@
 **F-LLM** is a research platform designed to benchmark and compare Large Language Models (LLMs) across multiple docs in smart factory contexts. It provides:
 
 - A **conversational playground** to interact with 20+ LLMs using different prompting strategies
-- A **Retrieval-Augmented Generation (RAG)** pipeline supporting both vector search (ChromaDB) and knowledge graphs (NebulaGraph)
+- A **Retrieval-Augmented Generation (RAG)** pipeline supporting vector search (ChromaDB)
 - A **fully automated evaluation pipeline** measuring context precision, recall, faithfulness, and response groundedness using RAGAS and NVIDIA NeMo metrics
 - A **reproducible environment** via Docker, Makefile, and locked dependency files
 
@@ -38,8 +38,8 @@
 ### 1 — Clone the Repository
 
 ```bash
-git clone https://github.com/<your-org>/F-LLM.git
-cd F-LLM
+git clone https://github.com/DigitalInnovationLab/Factory-LLM
+cd Factory-LLM
 ```
 
 ### 2 — Create the Virtual Environment & Install Dependencies
@@ -86,7 +86,6 @@ cp .env.example .env
 ```dotenv
 # ── Application ──────────────────────────────────────────────
 APP_ENV=development
-STORAGE_SECRET=change-me-to-a-random-32-char-string
 
 # ── MySQL ─────────────────────────────────────────────────────
 MYSQL_PASSWORD=your_mysql_password
@@ -209,7 +208,7 @@ Open your browser at: **[http://localhost:8888](http://localhost:8888)**
 ### First-time walkthrough
 
 1. **Login** — Enter any valid email address (account is created automatically)
-2. **Select a Topic** — Create a factory topic.
+2. **Select a Topic** — Create a topic.
 3. **Configure** — Configure the LLM model, prompting technique and RAG technique.
 4. **Upload Documents** — Upload PDF files.
 5. **Chat** — Ask questions.
