@@ -1,0 +1,25 @@
+.card {
+    padding: 20px;
+    background-color: #282c3e;
+    color: white;
+    width: 250px;
+    height: 250px;
+    overflow-wrap: break-word;
+    overflow: hidden; text-overflow: ellipsis;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.buttons-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+div[data-testid="stAppViewBlockContainer"]{
+    max-width: 75%;
+}
+[data-testid="stForm"] {
+    border: 0px
+}

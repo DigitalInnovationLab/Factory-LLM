@@ -1,0 +1,57 @@
+include:
+  - nebula-dockercompose.yml
+
+networks:
+  f-llm-net:
+    driver: bridge
+
+volumes:
+  mysql_data:
+  chromadb_data:
+  nebula_data:
+
+services:
+  mysql:
+    image: mysql:9.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: f-llm
+      MYSQL_ROOT_HOST: '%'
+    networks:
+      - f-llm-net
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - '3306:3306'
+  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      - f-llm-net
+    ports:
+      - '8080:80'
+
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: chromadb
+    restart: always
+    networks:
+      - f-llm-net
+    volumes:
+      - chromadb_data:/chroma/chroma
+    ports:
+      - '8000:8000'
+    environment:
+      CHROMA_SERVER_AUTHN_PROVIDER: chromadb.auth.token_authn.TokenAuthenticationServerProvider
+      CHROMA_SERVER_AUTHN_CREDENTIALS: ${CHROMA_TOKEN}
+      CHROMA_AUTH_TOKEN_TRANSPORT_HEADER: "Authorization"
+      IS_PERSISTENT: true
+      ANONYMIZED_TELEMETRY: false

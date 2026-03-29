@@ -1,0 +1,2 @@
+[MAIN]
+disable=C0114,E0401,R0903,R0916,W0511,R0913,W0718 # Disable missing module docstring, import error, too few public methods, too-many-boolean-expressions, fixme, too many arguments, too many return statements, broad-exception-caught
