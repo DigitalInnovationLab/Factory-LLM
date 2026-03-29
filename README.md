@@ -11,7 +11,7 @@
 
 ## Overview
 
-**F-LLM** is a research platform designed to benchmark and compare Large Language Models (LLMs) across multiple dimensions in smart factory contexts. It provides:
+**F-LLM** is a research platform designed to benchmark and compare Large Language Models (LLMs) across multiple docs in smart factory contexts. It provides:
 
 - A **conversational playground** to interact with 20+ LLMs using different prompting strategies
 - A **Retrieval-Augmented Generation (RAG)** pipeline supporting both vector search (ChromaDB) and knowledge graphs (NebulaGraph)
