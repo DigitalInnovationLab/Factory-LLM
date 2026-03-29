@@ -328,7 +328,7 @@ F-LLM/
 │       │   └── prompt.py           # Technique enum
 │       │
 │       └── llamaindex_extensions/
-│           └── pdftextimagereader.py   # Multi-modal PDF reader (text + images)
+│           └── pdftextimagereader.py   # PDF reader
 │
 ├── frontend/
 │   ├── pages/
