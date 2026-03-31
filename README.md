@@ -1,4 +1,4 @@
-# FactoryLLM - An Open Safe AI Sandbox for Evaluating LLM in Smart Factories
+# FactoryLLM - A Safe and Open-Source AI Playground for Evaluating LLMs in Smart Factories
 
 > **An Open Safe AI Sandbox for Evaluating Large Language Models in Smart Factories**
 
